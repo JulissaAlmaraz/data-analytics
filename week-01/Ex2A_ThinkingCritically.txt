@@ -1,0 +1,25 @@
+1. Before doing any other investigation, list two or three questions that this infographic and explanation of methodology raised in your mind.
+
+How did they conclude what exactly the breakup foods were? Does correlation equal causation in this case?
+
+2. Where can you find the Google Trends search data? Provide the URL. 
+https://trends.google.com/trends/
+
+3. a) What is the highest peak recorded in the line chart for "interest over time"? 100 in July 2024
+   b) What is the lowest dip recorded? Lowest 73 from Sep 30 - Oct 31
+
+4. a) What is the highest peak recorded for searches using Hamburger? What is the lowest dip? 
+Highest 100 Lowest 76
+   b) What happened to the line for Milkshake? what do the high and low look like now? Line is way lower
+
+5. Clicking on the i it says: The average search interest for each search term for the specified time period. 
+
+6. a) Do you see any patterns that suggest a relationship between searches for Breakup and Hamburger? No
+   b) How about between Breakup and Milkshake? Not necessarily 
+
+7. How does all of this suggest the reliability of the conclusions reached in the article? A bit since the lines were closer but we are still unsure if breakup was the reason why
+
+8. a) What was the top state by interest for Milkshake? Maryland
+   b) What was the top state by interest for Hamburger? Kansas
+
+

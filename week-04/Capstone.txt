@@ -43,3 +43,82 @@ WHERE vendor ILIKE '%constellation%'
 GROUP BY description
 ORDER BY item_count DESC; 
 -- Black Velvet 81095
+
+-- 6. Which store generated the highest total revenue for your [Category/Vendor]? 
+-- Which generated the lowest (but still greater than zero)? 
+-- (Strength vs. Weakness: Identifying your best and worst retail partners). 
+
+SELECT MAX(total) AS Highest_Revenue, MIN(total) AS Lowest_Revenue
+FROM sales
+WHERE vendor ILIKE '%constellation%' AND total > 0
+-- highest: 37632.00 , lowest: 1.50
+
+-- 7. What is the total revenue for every vendor within your chosen [Category],
+-- sorted from highest to lowest? 
+-- (Threat: Identifying your top competitors in that space). 
+SELECT vendor, sum(total) as highest
+FROM sales
+GROUP by vendor
+ORDER BY highest DESC
+--"Diageo Americas" 84264824.47 TOP vendor
+
+
+8. Which stores had total sales revenue for your [Category/Vendor] exceeding $2,000? 
+-- (Hint: Use HAVING to filter aggregated store totals). 
+-- (Strength: Pinpointing high-performing retail locations). 
+SELECT store, SUM(total)
+FROM sales
+WHERE vendor ILIKE '%constellation%'
+GROUP BY store
+HAVING SUM(total)> 2000
+
+
+-- 9. Find all sales records where the category_name is either your chosen category 
+-- or a closely related competitor category (e.g., 'VODKA 80 PROOF' vs 'IMPORTED VODKA'). 
+-- (Threat: Comparing performance against direct substitutes). 
+SELECT vendor, sum(total) as total_revenue
+FROM sales
+WHERE category_name IN (
+SELECT DISTINCT category_name
+FROM sales
+WHERE vendor ILIKE '%constellation%'
+)
+GROUP by vendor
+ORDER BY total_revenue DESC
+
+
+
+-- 10. List all transactions where the state bottle cost was between $10 and $20 for 
+-- your [Category/Vendor]. -- (Opportunity: Analyzing performance in the "mid-tier" price bracket). 
+SELECT *
+FROM sales
+WHERE vendor ILIKE '%constellation%'
+	AND state_btl_cost :: numeric BETWEEN 10 AND 20
+
+-- 11. Write a query that displays each store's total sales for your [Category/Vendor] 
+-- along with the store's name and address from the stores_table. 
+-- (Strength: Mapping your physical sales footprint).
+SELECT SUM(s.total) AS total_sales, st.name, st.store_address
+FROM sales AS s 
+JOIN stores AS st ON st.store = s.store
+WHERE s.vendor ILIKE '%constellation%'
+GROUP BY st.name, st.store_address
+ORDER BY total_sales DESC
+
+
+-- 12. For each sale in your [Category], display the transaction date, total amount, 
+-- and the population of the county where the sale occurred by joining with counties_table. 
+-- (Opportunity: Correlating sales volume with population density).
+SELECT s.date, s.total, c.population
+FROM sales AS s 
+JOIN counties AS c ON s.county = c.county
+WHERE s.vendor ILIKE '%constellation%'
+
+-- 13. Write a query that shows total sales for your [Category/Vendor] by county. 
+-- Which county generates the most revenue for you? 
+-- (Strength: Identifying your geographic stronghold). 
+SELECT SUM(total) AS total_sales, county
+FROM sales 
+WHERE vendor ILIKE '%constellation%'
+GROUP BY county
+ORDER BY total_sales DESC

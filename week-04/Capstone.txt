@@ -48,10 +48,22 @@ ORDER BY item_count DESC;
 -- Which generated the lowest (but still greater than zero)? 
 -- (Strength vs. Weakness: Identifying your best and worst retail partners). 
 
-SELECT MAX(total) AS Highest_Revenue, MIN(total) AS Lowest_Revenue
+
+SELECT store, SUM(total) AS total_sales
 FROM sales
-WHERE vendor ILIKE '%constellation%' AND total > 0
--- highest: 37632.00 , lowest: 1.50
+WHERE vendor ILIKE '%constellation%'
+GROUP BY store
+ORDER BY total_sales DESC
+LIMIT 1
+
+SELECT store, SUM(total) AS total_sales
+FROM sales
+WHERE vendor ILIKE '%constellation%'
+GROUP BY store
+HAVING SUM(total) > 0
+ORDER BY total_sales ASC
+LIMIT 1
+-- highest: 3814 store, 335,516.46 , lowest: 5076 store, 19.59
 
 -- 7. What is the total revenue for every vendor within your chosen [Category],
 -- sorted from highest to lowest? 
@@ -150,6 +162,24 @@ SELECT *
 FROM sales 
 WHERE vendor ILIKE '%constellation%'
 AND county = 'Polk'
+
+-- 18. Which stores had total sales for your [Category/Vendor] that were above the 
+-- average store revenue for that same group? (Hint: Use a subquery for the average). 
+-- (Strength: Identifying stores that are over-performing). 
+SELECT AVG(total_sales)
+FROM (
+	SELECT store, SUM(total) AS total_sales
+	FROM sales
+	WHERE vendor ILIKE 'constellation%'
+	GROUP BY store
+) AS store_totals 
+
+SELECT store, SUM(total) AS total_sales
+FROM sales
+WHERE vendor ILIKE 'constellation%' 
+GROUP BY store
+HAVING SUM(total) > 19994.346619190405
+ORDER BY total_sales DESC
 
 -- 19. Find the top 5 highest-grossing items for your [Vendor], then use a subquery 
 -- to look up their full details (like case_cost and proof) from the products_table. 

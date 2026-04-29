@@ -122,3 +122,45 @@ FROM sales
 WHERE vendor ILIKE '%constellation%'
 GROUP BY county
 ORDER BY total_sales DESC
+
+-- 14. Join the sales_table and products_table to show total revenue for your [Vendor] 
+-- alongside the proof and pack size of the items. 
+-- (Strength: Determining if higher proof or larger packs drive more revenue). 
+SELECT SUM(s.total) AS total_sales, p.proof, p.pack
+FROM sales AS s 
+JOIN products AS p ON s.item = p.item_no
+WHERE s.vendor ILIKE '%constellation%'
+GROUP BY p.proof, p.pack
+ORDER BY total_sales DESC
+
+16. Display total revenue for your [Category/Vendor] grouped by the store_status 
+-- (from stores_table). Are active stores ('A') performing significantly better than others? 
+-- (Threat: Assessing the risk of sales tied to inactive or closed locations).
+SELECT SUM(s.total) AS total_sales, st.store_status
+FROM sales AS s 
+JOIN stores AS st ON s.store = st.store
+WHERE s.vendor ILIKE '%constellation%'
+GROUP BY st.store_status
+ORDER BY total_sales
+
+-- 17. Using a subquery, find all transactions for your [Category/Vendor] from stores
+-- located in a specific high-growth city (e.g., 'Des Moines') found in the stores_table. 
+-- (Opportunity: Drilling down into urban market performance). 
+SELECT * 
+FROM sales 
+WHERE vendor ILIKE '%constellation%'
+AND county = 'Polk'
+
+-- 19. Find the top 5 highest-grossing items for your [Vendor], then use a subquery 
+-- to look up their full details (like case_cost and proof) from the products_table. 
+-- (Strength: Deep-dive into the specs of your most profitable inventory). 
+SELECT  s.description, 
+		p.case_cost, 
+		p.proof,
+		SUM(s.total) AS total_sales
+FROM sales AS s
+JOIN products AS p ON s.item = p.item_no
+WHERE s.vendor ILIKE 'constellation%'
+GROUP BY s.description, p.case_cost, p.proof
+ORDER BY total_sales DESC
+LIMIT 5

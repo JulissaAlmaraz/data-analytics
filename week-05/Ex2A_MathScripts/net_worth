@@ -1,0 +1,19 @@
+#Calculating net worth based on assets and debts
+
+#Assets
+bank_account = 15000
+car_value = 10000
+home_value = 250000
+total_assets = bank_account + car_value + home_value
+
+#Debts
+student_loans = 2000
+mortgage = 150000
+total_debts = student_loans + mortgage
+
+#Net worth
+net_worth = total_assets - total_debts
+
+print("Your total assets are " + str(total_assets))
+print("Your total debts are " + str(total_debts))
+print("Your total net worth is " + str(net_worth))

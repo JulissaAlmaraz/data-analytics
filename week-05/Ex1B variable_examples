@@ -1,0 +1,18 @@
+customer_id = 1 #I assumed this to be an int since it usually is in SQL
+customer_name = 'John Smith' #I assumed first and last name, though it could be switched
+customer_gender = 'Male' #I assumed string it seemed the most obvious
+customer_dob = '01-15-1995' #I assumed string since the date usually has - / characters that would not read as int
+customer_drivers_license = 'J123-4567-8901' #same reason as dob
+auto_policy_number = 0 #usually the same as ID, though if it auto increments like in SQL, i am unsure how I would assign in Python
+
+my_name = 'Julissa Almaraz Flores'
+location = 'Chicago IL'
+
+#a) Full list of reserved words that can't be used as variable names:
+# False, def, if, raise, None, del, import, return, True, elif, in, try, and, else, is, while, as, except, labmda, with, assert, finally, nonlocal, yield, break, for, not, class, for, not, break, form, or, continue, global, pass
+
+#False is a boolean operator that represents the opposite of Truth
+#def function is used to define a function or a method
+#if statement is used to make a conditional statement. If the condition is True, then some action is performed. 
+#raise statement is used to raise an error. These errors are visible in the traceback and they cancel the execution of the program if not handled properly.
+#There is no NULL value in Python. The None object that represents the absence of a value. It is like an empty object.

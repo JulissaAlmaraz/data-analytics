@@ -15,7 +15,7 @@ ORDER BY total DESC
 -- (Strength: Identifying bulk buyers or wholesale-style transactions). 
 SELECT date, store, description, total
 FROM sales
-WHERE bottle_qty > 12
+WHERE bottle_qty > 12 AND vendor ILIKE 'constellation%'
 
 -- 3. Find all products in the products_table whose item_description contains a specific 
 -- keyword (e.g., 'Limited', 'Spiced'). What categories do they belong to? 

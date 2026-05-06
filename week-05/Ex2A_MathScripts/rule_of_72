@@ -9,3 +9,11 @@ double_balance = balance * 2
 
 print('Your current savings is ' + format(balance, ".2f"))
 print('At a', format(interest_rate_decimal, ".0%"), "interest rate, your savings account will be worth", format(double_balance, ".2f"), "in", format(years_to_double, ".1f"), "years.")
+
+#Input function
+savings_balance = input("What is your savings balance?")
+print("Your savings balance is " + savings_balance)
+#I notice that the input functions waits for the user to input anything, and will print out once called on, provided that I add it to a print
+#I also notice a pitfall: a user could input whatever they want even if it isn't a int and it would still print
+
+print(f"The total balance is {balance}")

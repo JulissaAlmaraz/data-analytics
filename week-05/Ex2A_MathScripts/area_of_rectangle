@@ -1,0 +1,9 @@
+#Calculating area of a rectangle
+
+length = 5
+width = 4
+area = length * width
+
+print("Side A is " + str(length))
+print("Side B is " + str(width))
+print("The area of the rectangle is " + str(area))

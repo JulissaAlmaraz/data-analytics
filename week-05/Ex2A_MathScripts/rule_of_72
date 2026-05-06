@@ -1,0 +1,11 @@
+#Rule of 72
+
+balance = 10500
+interest_rate_decimal = 0.05
+interest_rate_whole = interest_rate_decimal * 100
+
+years_to_double = 72 / interest_rate_whole 
+double_balance = balance * 2
+
+print('Your current savings is ' + format(balance, ".2f"))
+print('At a', format(interest_rate_decimal, ".0%"), "interest rate, your savings account will be worth", format(double_balance, ".2f"), "in", format(years_to_double, ".1f"), "years.")

@@ -1,0 +1,16 @@
+candies = ('starburst', 'skittles', 'jolly rancher')
+flavors = ('strawberry', 'orange', 'blueberry')
+
+candy_combinations = set()
+
+candy_combinations.add(candies[0] + " " + flavors[0])
+candy_combinations.add(candies[1] + " " + flavors[1])
+candy_combinations.add(candies[2] + " " + flavors[2])
+
+print(f'Todays candy options include {candy_combinations}')
+#Todays candy options include {'starburst strawberry', 'jolly rancher blueberry', 'skittles orange'}
+
+print(f'Todays candy options include {candy_combinations}')
+#Todays candy options include {'jolly rancher blueberry', 'skittles orange', 'starburst strawberry'}
+
+#I notice that order is inconsistent, they are in different orders each time. They may repeat the same order sometimes, however there is no guarantee 

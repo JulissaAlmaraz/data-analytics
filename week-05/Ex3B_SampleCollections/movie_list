@@ -1,0 +1,13 @@
+movies = ['Spider-Man', 'Spider-Man Across the Spider-Verse', '28 Days Later', '28 Years Later', '28 Years Later: The Bone Temple']
+print(f'The list movies includes my top {len(movies)} favorite movies.')
+print(movies)
+
+#Sorting
+print(sorted(movies))
+#['28 Days Later', '28 Years Later', '28 Years Later: The Bone Temple', 'Spider-Man', 'Spider-Man Across the Spider-Verse']
+#['Spider-Man', 'Spider-Man Across the Spider-Verse', '28 Days Later', '28 Years Later', '28 Years Later: The Bone Temple']
+#I notice it changes to numbers being first, then alphabetical order
+
+movies.append('Last Night in Soho')
+print(movies)
+#['Spider-Man', 'Spider-Man Across the Spider-Verse', '28 Days Later', '28 Years Later', '28 Years Later: The Bone Temple', 'Last Night in Soho']

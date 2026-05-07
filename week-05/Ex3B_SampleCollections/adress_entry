@@ -1,0 +1,21 @@
+address = {
+    "address" : "123 State St",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60601"
+}
+
+full_name = {
+    "first name" : "John",
+    "last name" : "Smith"
+}
+
+full_name.update({"honorific" : "Mr."})
+address.update({"full_name" : full_name})
+
+print(f"""
+{address['full_name'] ["honorific"]} {address['full_name'] ['first name']} {address['full_name'] ['last name']}
+{address['address']}
+{address['city']}, {address['state']} {address['zip']}
+""")
+#Output as expected

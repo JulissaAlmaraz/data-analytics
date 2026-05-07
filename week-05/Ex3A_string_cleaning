@@ -1,0 +1,26 @@
+name_1 = 'PRIYA SHARMA'
+name_2 = 'bob NGUYEN'
+name_3 = 'LaTonya Williams'
+salary_1 = '$82,500'
+salary_2 = '$74,000'
+
+print(name_1.lower())
+#priya sharma
+print(name_2.lower())
+#bob nguyen
+print(name_3.lower())
+#latonya williams
+print(name_1.title())
+#Priya Sharma
+print(name_2.title())
+#Bob Nguyen
+print(name_3.title())
+#Latonya Williams
+print(salary_1.replace('$', ''))
+#82,500
+print(salary_2.replace('$', ''))
+#74,000
+
+replacing_sal1 = salary_1.replace('$', '').replace(',', '')
+print(int(replacing_sal1))
+#82500

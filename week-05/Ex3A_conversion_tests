@@ -1,0 +1,40 @@
+# Description: This script tests various numeric conversion techniques
+# Author: Julissa Almaraz Flores
+
+a = " 101.1  "
+b = '55'
+c = "402 Stevens"
+d = 'Number 5 '
+
+a_float = float(a)
+print (a_float)
+
+b_int = int(b)
+print(b_int)
+
+c_upper = c.upper()
+print(c_upper)
+
+d_lower = d.lower()
+print(d_lower)
+
+#a_int = int(a)
+#print(a_int) 
+#ValueError: invalid literal for int() with base 10: ' 101.1  '
+
+b_float = float(b)
+print(b_float)
+#55.0
+
+a_int_float = int(float(a))
+print(a_int_float)
+#101
+
+c_slice = (c[4:9])
+print(c_slice)
+#Steve
+
+print(a.strip())
+#101.1
+print(d.strip())
+#Number 5

@@ -1,0 +1,7 @@
+#Taxes Witholding
+
+salary = 75000
+taxes_witholdings = f"{.23 * salary:.2f}"
+print(taxes_witholdings)
+
+#Output: 17250.00

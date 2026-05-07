@@ -1,0 +1,7 @@
+#Converting Celsisus to Fahrenheit
+
+c_temperature = 23.88888888888889
+celsius_to_fahrenheit = (c_temperature * 9/5) + 32
+print(celsius_to_fahrenheit)
+
+#Output: 75.0

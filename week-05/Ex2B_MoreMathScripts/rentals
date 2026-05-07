@@ -1,0 +1,18 @@
+#Rentals
+
+tourists = 38
+vans_seats = 15
+van_cost = 250
+
+vans_needed = round(tourists / vans_seats)
+cost_to_rent = vans_needed * van_cost
+cost_per_person = van_cost / tourists
+
+print(f"We need {vans_needed} vans")
+print(f"It will cost {cost_to_rent} in total to rent")
+print(f"It will be {cost_per_person:.2f} per person")
+
+#Output with 38 tourists: 
+# We need 3 vans
+# It will cost 750 in total to rent
+# It will be 6.58 per person

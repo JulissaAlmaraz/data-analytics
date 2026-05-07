@@ -1,0 +1,7 @@
+#Converting Fahrenheit to Celsius
+
+f_temperature = 75 
+farhenheit_to_celsius = (f_temperature - 32) * 5/9
+
+print(farhenheit_to_celsius)
+#Output: 23.88888888888889s

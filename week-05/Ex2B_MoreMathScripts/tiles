@@ -1,0 +1,13 @@
+#Tiles
+import math
+
+length = 10
+width = 10
+area = length * width
+
+required_tiles = area * 1.10 
+
+total_boxes = math.ceil(required_tiles / 12)
+
+print(f"You need to buy {total_boxes} boxes")
+

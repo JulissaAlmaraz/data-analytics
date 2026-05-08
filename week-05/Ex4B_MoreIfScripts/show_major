@@ -1,0 +1,27 @@
+#Show Major
+
+student_name = "John Smith"
+student_major = "CSCI"
+
+if student_major == "BIOL":
+    major = "Biology"
+    office = "Science Bldg, Room 310"
+elif student_major == "CSCI":
+    major = "Computer Science"
+    office = "Sheppard Hall, Room 314"
+elif student_major == "ENG":
+    major = "English"
+    office = "Kerr Hall, Room 201"
+elif student_major == "HIST":
+    major= "History"
+    office = "Kerr Hall, Room 114"
+elif student_major == "MKT":
+    major = "Marketing"
+    office = "Westly Hall, Room 310"
+else:
+    major = "<unknown>"
+    office = ""
+
+print(f"Student: {student_name}")
+print(f"Major: {major}")
+print(f"Location: {office}")

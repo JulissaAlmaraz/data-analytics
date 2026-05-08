@@ -1,0 +1,22 @@
+a = 10
+b = 20
+c = 30
+
+# smallest
+if a <= b and a <= c:
+    smallest = a
+elif b <= a and b <= c:
+    smallest = b
+else:
+    smallest = c
+
+# largest
+if a >= b and a >= c:
+    largest = a
+elif b >= a and b >= c:
+    largest = b
+else:
+    largest = c
+
+print(f"Smallest: {smallest}")
+print(f"Largest: {largest}")

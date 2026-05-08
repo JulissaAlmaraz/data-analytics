@@ -1,0 +1,59 @@
+#Calculating taxes based on annual income
+
+pay_rate = 27.50
+hours_worked = 45
+filing_status = 'single'
+
+regular_pay = 40 * pay_rate
+overtime_hours = hours_worked - 40
+overtime_pay = overtime_hours * (pay_rate * 1.50)
+ 
+if hours_worked <= 40:
+    gross_pay = hours_worked * pay_rate
+else: 
+    gross_pay = regular_pay + overtime_pay
+
+
+annual_gross_income = gross_pay * 52
+
+if filing_status == "single":
+    if annual_gross_income < 12000:
+        tax_rate = 0.05
+    elif annual_gross_income >= 12000 and annual_gross_income <= 24999.99:
+        tax_rate = 0.10
+    elif annual_gross_income >= 25000 and annual_gross_income <= 74999.99:
+        tax_rate = 0.15
+    elif annual_gross_income >= 75000:
+        tax_rate = 0.20
+
+
+elif filing_status == "joint":
+    if annual_gross_income < 12000:
+        tax_rate = 0.00
+    elif annual_gross_income >= 12000 and annual_gross_income <= 24999.99:
+        tax_rate = 0.06
+    elif annual_gross_income >= 25000 and annual_gross_income <= 74999.99:
+        tax_rate = 0.11
+    else:
+        tax_rate = 0.20
+
+
+tax_withheld = gross_pay * tax_rate
+
+net_pay = gross_pay - tax_withheld
+
+
+print(f"Pay is {gross_pay} because you worked {hours_worked} hours")
+print(f"You worked {hours_worked} hours this period.")
+print(f"Because you earn ${pay_rate} per hour, your gross weekly pay is ${gross_pay}")
+print(f"Your filing status is {filing_status}")
+print(f"Your tax withholding for the week is ${tax_withheld}")
+print(f"Your net pay is ${net_pay}")
+
+#Output:
+#Pay is 1306.25 because you worked 45 hours
+#You worked 45 hours this period.
+#Because you earn $27.5 per hour, your gross weekly pay is $1306.25
+#Your filing status is single
+#Your tax withholding for the week is $195.9375
+#Your net pay is $1110.3125

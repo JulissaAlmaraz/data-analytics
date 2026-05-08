@@ -1,0 +1,11 @@
+# Conditional Logic greeting based one time
+
+time = 8
+
+if time >= 23 or time < 4:
+    print("what are you doing up so late?")
+elif time < 10:
+    print("Good morning!")
+elif time < 17:
+    print("Good day!")
+else: print("Good evening!")

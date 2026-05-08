@@ -1,0 +1,17 @@
+#For Loop
+
+words = ['amazing', 'awesome', 'excellent', 'fantastic', 'terrific', 'wonderful', 'superb']
+
+for word in words:
+    print(f'Loops are {word}!')
+print('I <3 loops')
+
+#Output: 
+#Loops are amazing!
+#Loops are awesome!
+#Loops are excellent!
+#Loops are fantastic!
+#Loops are terrific!
+#Loops are wonderful!
+#Loops are superb!
+#I <3 loops

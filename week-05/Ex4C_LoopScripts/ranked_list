@@ -1,0 +1,28 @@
+#Ranked List with enumerate and for loop
+
+skills = ['SQL', 'Python', 'Excel', 'Power BI', 'Git']
+
+#Ranked regular
+for i, skill in enumerate(skills):
+    if i == 0:
+        print(f'{i + 1}. {skill} <- top pick!')
+    else:
+        print(f'{i + 1}. {skill}')
+#Output:
+#1. SQL <- top pick!
+#2. Python
+#3. Excel
+#4. Power BI
+#5. Git
+
+# BONUS Ranked reversed
+
+for i, skill in enumerate(reversed(skills)):
+    print(f'{i + 1}. {skill}')
+
+#Output:
+#1. Git
+#2. Power BI
+#3. Excel
+#4. Python
+#5. SQL

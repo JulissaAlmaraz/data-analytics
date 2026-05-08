@@ -1,0 +1,15 @@
+#Pay Rules
+
+pay_rate = 27.50
+hours_worked = 45
+regular_pay = 40 * pay_rate
+overtime_hours = hours_worked - 40
+overtime_pay = overtime_hours * (pay_rate * 1.50)
+ 
+if hours_worked <= 40:
+    gross_pay = hours_worked * pay_rate
+else: 
+    gross_pay = regular_pay + overtime_pay
+
+print(f"Pay is {gross_pay} because you worked {hours_worked} hours")
+#Output: Pay is 1306.25 because you worked 45 hours

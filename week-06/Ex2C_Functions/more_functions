@@ -1,0 +1,27 @@
+#More functions
+
+def display_mailing_label(name, address, city, state, zip):
+    print(f'{name}\n{address}\n{city}, {state} {zip}')
+
+def add_numbers(*numbers):
+    total = sum(numbers)
+    nums = " + ".join(str(num)for num in numbers)
+    print(f'{nums} = {total}')
+
+def display_receipt(total_due, amount_paid):
+    if amount_paid < total_due:
+        remaining_balance = total_due - amount_paid
+        print(f'Your total is ${total_due}, you paid ${amount_paid}. Your remaining balance is ${remaining_balance}')
+    else:
+        change_due = amount_paid - total_due
+        print(f'Total Due: ${total_due}\nAmount Paid: ${amount_paid}\nChange due: ${change_due}')
+display_receipt(400,579)
+display_receipt(400,400)
+display_receipt(400,150)
+
+add_numbers(2)
+add_numbers(23, 32)
+add_numbers(78, 89, 98, 45, 34,89)
+
+display_mailing_label('Julissa Almaraz', '123 State St.', 'Chicago', 'IL', '60601')
+display_mailing_label('Max A', '1234 56th St.', 'Los Angeles', 'CA', '78089')

@@ -1,0 +1,57 @@
+class Restaurant:
+    """A class to represt a restaurant basic operations"""
+    def __init__(self, rest_name, food_type):
+        """Initializes name and food type attributes"""
+        self.rest_name = rest_name
+        self.food_type = food_type
+        self.number_served = 0
+        self.customer_ratings = []
+
+    def describe_rest(self):
+        """Print restaurant name and food type"""
+        print(f'{self.rest_name} serves {self.food_type}.')
+
+    def rest_open(self):
+        """Print a message that shows restaurant is open"""
+        print(f'{self.rest_name} is open.')
+    
+    def add_num_served(self, number_served):
+        """Add number of customers served to total"""
+        self.number_served += number_served
+    
+    def print_num_served(self):
+        """Print num of customers served"""
+        print(f'{self.rest_name} has served {self.number_served} customers')
+    
+    def customer_rating(self, rating):
+        """Add customer rating and check average"""
+        if type(rating) == int and 1 <= rating <= 5:
+            self.customer_ratings.append(rating)
+            average = sum(self.customer_ratings)/ len(self.customer_ratings)
+            print(f'Your rating is {rating}.')
+            print(f'The average rating for this restaurant is {average:.2f}')
+        else:
+            print('Invalid rating. Please enter a number from 1-5')
+
+restaurant1 = Restaurant('Strings', 'Japanese')
+restaurant2 = Restaurant('Tequila', 'Mexican')
+restaurant3 = Restaurant('Petterinos', 'Italian')
+
+
+restaurant1.describe_rest()
+restaurant1.rest_open()
+restaurant1.add_num_served(28)
+restaurant1.print_num_served()
+restaurant1.customer_rating(4)
+
+restaurant2.describe_rest()
+restaurant2.rest_open()
+restaurant2.add_num_served(58)
+restaurant2.print_num_served()
+restaurant2.customer_rating(5)
+
+restaurant3.describe_rest()
+restaurant3.rest_open()
+restaurant3.add_num_served(87)
+restaurant3.print_num_served()
+restaurant3.customer_rating(2)

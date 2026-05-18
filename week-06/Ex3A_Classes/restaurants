@@ -1,0 +1,27 @@
+class Restaurant:
+    """A class to represt a restaurant basic operations"""
+    def __init__(self, rest_name, food_type):
+        """Initializes name and food type attributes"""
+        self.rest_name = rest_name
+        self.food_type = food_type
+
+    def describe_rest(self):
+        """Print restaurant name and food type"""
+        print(f'{self.rest_name} serves {self.food_type}.')
+
+    def rest_open(self):
+        """Print a message that shows restaurant is open"""
+        print(f'{self.rest_name} is open.')
+
+restaurant1 = Restaurant('Strings', 'Japanese')
+restaurant2 = Restaurant('Tequila', 'Mexican')
+restaurant3 = Restaurant('Petterinos', 'Italian')
+
+restaurant1.describe_rest()
+restaurant1.rest_open()
+
+restaurant2.describe_rest()
+restaurant2.rest_open()
+
+restaurant3.describe_rest()
+restaurant3.rest_open()

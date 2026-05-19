@@ -1,0 +1,22 @@
+f = open("about_me.txt", "r")
+
+print(f.read(10))
+print(f.read())
+
+first_50 = f.read(50)
+
+next_4_lines = []
+
+for i in range(4):
+    next_4_lines.append(f.readline())
+
+
+next_100 = f.readlines(100)
+
+print(f"First 50 characters:{first_50}")
+
+
+print(f"\nNext four lines, as list by lines:{next_4_lines}")
+
+print(f'\nNext 100 characters, as list by line, rounded up to complete lines:{next_100}')
+f.close()

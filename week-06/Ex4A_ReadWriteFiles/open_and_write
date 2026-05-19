@@ -1,0 +1,6 @@
+f = open("about_me.txt", "a")
+
+f.write('\nPerfect night out: ')
+f.write('Going to a my favorite restaurant and seeing a movie.')
+
+f.close()

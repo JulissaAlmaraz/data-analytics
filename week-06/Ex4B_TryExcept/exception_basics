@@ -1,0 +1,79 @@
+try:
+    number = int("Banana")
+except ValueError:
+    print('ValueError: You cannot convert text into an integer.')
+else:
+    print(number)
+finally:
+    print('Lets try another one..\n')
+
+
+try:
+    age = int('twenty seven')
+except ValueError:
+    print('ValueError: Invalid number input.')
+else: 
+    print(age)
+finally:
+    print('Lets try another one..\n')
+
+
+try:
+    m = banana
+except NameError:
+    print("NameError: You tried to use a variable that does not exist.")
+else:
+    print(m)
+finally:
+    print("Let's try another one...\n")
+
+
+try:
+    print(username)
+except NameError:
+    print("NameError: username has not been defined.")
+else:
+    print(username)
+finally:
+    print("Let's try another one...\n")
+
+
+
+try:
+    result = "5" + 5
+except TypeError:
+    print("TypeError: You cannot add a string and an integer.")
+else:
+    print(result)
+finally:
+    print("Let's try another one...\n")
+
+
+try:
+    length = len(10)
+except TypeError:
+    print("TypeError: len() only works with collections or strings.")
+else:
+    print(length)
+finally:
+    print("Let's try another one...\n")
+
+
+try:
+    eval("if True print('hello')")
+except SyntaxError:
+    print("SyntaxError: Invalid Python syntax.")
+else:
+    print("Code worked.")
+finally:
+    print("Let's try another one..\n")
+
+
+try:
+    eval("5 +")
+except SyntaxError:
+    print("SyntaxError: Incomplete expression.")
+else:
+    print("Code worked.")
+finally:
+    print("Let's try another one...\n")
